@@ -6,3 +6,5 @@ Contains next files:
 The data set is available [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). The result of the script is average of each variable for each activity and each subject.
 
 2. **CodeBook.md** - the code book for the run_analysis.R that describes the variables, the data and steps to analyze the input data
+
+3. **Result.txt** - the result of the analysis.
