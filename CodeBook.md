@@ -33,31 +33,31 @@ subj_test <- read.csv(file_subj_test, header = FALSE, sep = "", col.names = "sub
 ## Prepare data
 1. Set column names.
 
-```R
-names(train) <- col_names[,2]
-names(test) <- col_names[,2]
-```
+  ```R
+  names(train) <- col_names[,2]
+  names(test) <- col_names[,2]
+  ```
 2. Merge data sets with subjects and activities.
 
-```R
-train <- cbind(train, act_train)
-test <- cbind(test, act_test)
-train <- cbind(train, subj_train)
-test <- cbind(test, subj_test)
-```
+  ```R
+  train <- cbind(train, act_train)
+  test <- cbind(test, act_test)
+  train <- cbind(train, subj_train)
+  test <- cbind(test, subj_test)
+  ```
 
 3. Merge activities names with activity numbers.
 
-```R
-train <- merge(train, act_names, by.x = "V1", by.y = "N")
-test <- merge(test, act_names, by.x = "V1", by.y = "N")
-```
+  ```R
+  train <- merge(train, act_names, by.x = "V1", by.y = "N")
+  test <- merge(test, act_names, by.x = "V1", by.y = "N")
+  ```
 
 4. Merge test and train measurements.
 
-```R
-mset <- rbind(train, test)
-```
+  ```R
+  mset <- rbind(train, test)
+  ```
 
 ## Make analysis
 1. Take neccessary column labels. I use escape "\\(" to avoid such columns 'fBodyBodyGyroMag-meanFreq()'.
