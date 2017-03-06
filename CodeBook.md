@@ -77,3 +77,4 @@ mset <- mset[, coln]
 ```R
 new_mset <- mset %>% group_by(subject, activity) %>% summarise_each(funs(mean))
 ```
+
