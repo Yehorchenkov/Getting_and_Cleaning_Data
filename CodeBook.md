@@ -33,10 +33,11 @@ subj_test <- read.csv(file_subj_test, header = FALSE, sep = "", col.names = "sub
 ## Prepare data
 1. Set column names.
 
-  ```R
-  names(train) <- col_names[,2]
-  names(test) <- col_names[,2]
-  ```
+   ```R
+   names(train) <- col_names[,2]
+   names(test) <- col_names[,2]
+   ```
+    
 2. Merge data sets with subjects and activities.
 
   ```R
@@ -62,19 +63,20 @@ subj_test <- read.csv(file_subj_test, header = FALSE, sep = "", col.names = "sub
 ## Make analysis
 1. Take neccessary column labels. I use escape "\\(" to avoid such columns 'fBodyBodyGyroMag-meanFreq()'.
 
-```R
-coln <- grep("mean\\(|std\\(|activity|subject", names(mset), value = TRUE)
-```
+  ```R
+  coln <- grep("mean\\(|std\\(|activity|subject", names(mset), value = TRUE)
+  ```
 
 2. Subset mset data test.
 
-```R
-mset <- mset[, coln]
-```
+  ```R
+  mset <- mset[, coln]
+  ```
 
 3. Create a new data set with average of each variable for each activity and each subject.
 
-```R
-new_mset <- mset %>% group_by(subject, activity) %>% summarise_each(funs(mean))
-```
-
+  ```R
+  new_mset <- mset %>% group_by(subject, activity) %>% summarise_each(funs(mean))
+  ```
+## Output
+The output data.frame contains average of each variable for each activity and each subject.
